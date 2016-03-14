@@ -1,0 +1,7 @@
+<h1>{{ sites }}</h1>
+<ul>
+{% for site in sites %}
+    <li><a href="{% url 'detail' site.site_name %}">{{ site.site_name }}</a></li>
+{% endfor %}
+</ul>
+
