@@ -16,5 +16,5 @@ def detail(request, site_name):
         devices = NetworkDevice.objects.filter(site_id=site_name)
     except Site.DoesNotExist:
         raise Http404("%s does not exist" % site_name)
-    return render(request, 'send_command/detail.html', {'devices': devices}) 
+    return render(request, 'send_command/site_detail.html', {'devices': devices}) 
 

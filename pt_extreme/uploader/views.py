@@ -10,7 +10,7 @@ from models import Document
 from send_command.models import NetworkDevice, Site, Credentials
 from forms import DocumentForm
 
-def list(request):
+def upload(request):
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
@@ -37,17 +37,17 @@ def list(request):
                         credentials     = Credentials.objects.get(username=row['credentials']),
                 )
 
-            # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('uploader.views.list'))
+            # Redirect to the document upload after POST
+            return HttpResponseRedirect(reverse('uploader.views.upload'))
     else:
         form = DocumentForm() # A empty, unbound form
 
-    # Load documents for the list page
+    # Load documents for the upload page
     documents = Document.objects.all()
 
-    # Render list page with the documents and the form
+    # Render upload page with the documents and the form
     return render_to_response(
-        'uploader/list.html',
+        'uploader/upload.html',
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )

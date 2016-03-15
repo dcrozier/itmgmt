@@ -20,12 +20,14 @@ from django.conf.urls.static import static
 
 from send_command import views as send_command
 from uploader import views as uploader
+from common import views as common
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', send_command.index, name='index'),
-    url(r'^site/(?P<site_name>[a-zA-Z-_]+)/', send_command.detail, name='detail'),
-    url(r'^', include('uploader.urls'))
+    url(r'^$', common.index, name='index'),
+    url(r'^sites/', common.site_view, name='site_view'),
+    url(r'^sites/(?P<site_name>[a-zA-Z-_]+)/', common.detail, name='detail'),
+    url(r'^upload/', uploader.upload, name='upload'),
 ]
 
 
