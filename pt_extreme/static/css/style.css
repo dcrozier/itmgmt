@@ -3,6 +3,21 @@ html, body {
   padding: 0;
 }
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #9fa0ff;
+  font-size: 18px;
+}
+
 html {
   font-size: 10px;
   background-color: #FFFFFF;
@@ -59,8 +74,7 @@ nav {
   height: 50px;
   background-color: #F3F781;
   display: flex;
-  border-style: solid;
-  border-color: #000000;
+  border: solid #000000;
 }
 
 nav ul {
@@ -112,21 +126,18 @@ input[type="submit"] {
 /* || main layout */
 
 main {
-  border-style: solid;
-  border-width: thin;
+  border: thin solid;
   display: flex;
 }
 
 article {
-  border-style: solid;
-  border-width: thin;
+  border: thin solid;
   flex: 4;
 }
 
 aside {
-  flex: 1;
-  border-style: solid;
-  border-width: thin;
+  flex: 2;
+  border: thin solid;
   margin-left: 10px;
   background-color: #FFFFFF;
 }

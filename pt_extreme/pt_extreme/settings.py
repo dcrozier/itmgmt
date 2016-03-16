@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'uploader.apps.UploaderConfig',
-    'send_command.apps.SendCommandConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -12,11 +12,12 @@
     <body>
     <header>
         <h1>Polytons</h1>
-        
+    </header>
     <nav>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="sites">View Sites</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="{% url 'create_site' %}">Create a Site</a></li>
+            <li><a href="{%  url 'site_view' %}">View Sites</a></li>
         </ul>
     </nav>
 
@@ -26,7 +27,12 @@
         </article>
 
         <aside>
-        <aside>
+            <ol>
+            {% for entry in recent_actions %}
+                <li>{{ entry.entry }} at {{ entry.input_time }}</li>
+            {% endfor %}
+            </ol>
+        </aside>
     </main>
 
     <footer>

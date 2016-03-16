@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+
+    <title>Polytons</title>
+    <link rel='stylesheet' type="text/css"  href="{% static 'css/style.css' %}" />
+
+</head>
+
+<h1>Add a site</h1>
+
+    <body>
+        <!--suppress HtmlUnknownTarget -->
+        <form action="#" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table style="width:100%" border="solid">
+                <tr>
+                    <th align="left">Site Name</th>
+                    <th align="left">Site Group</th>
+                    <th align="left">Site Credentials</th>
+                    <th align="left">Site Template</th>
+                </tr>
+                <tr>
+                    <td><input type='text' name='site_name' maxlength="50" size="30" title="Site Name"></td>
+                    <td>
+                        <select name="site_group" title="Site Groups">
+                        {% for entry in groups %}
+                            <option value="{{ entry.site_group }}">{{ entry.site_group }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="site_credentials" title="Credentials">
+                            <option value="add_credentials" onclick="window.open('{% url 'add_credentials' %}')">
+                                Create new credential group
+                            </option>
+                            {% for entry in creds %}
+                                <option value="{{ entry.description }}">{{ entry.description }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td><input type="file" name="site_template" title="Site Template"/></td>
+                </tr>
+            </table>
+            <p>
+                <input type="submit" value="Submit" />
+                <input type=button value="Back" onClick=":history.go(-1);" />
+            </p>
+        </form>
+    </body>
