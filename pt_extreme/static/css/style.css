@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html, body {
   margin: 0;
   padding: 0;
@@ -149,3 +150,156 @@ aside li {
 footer {
   margin-top: 10px;
 }
+=======
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #9fa0ff;
+  font-size: 18px;
+}
+
+html {
+  font-size: 10px;
+  background-color: #FFFFFF;
+}
+
+body {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* || typography */
+
+h1, h2, h3 {
+  font-family: 'Times New Roman', cursive;
+  color: #2a2a2a;
+}
+
+p, input, li {
+  font-family: 'Times New Roman', sans-serif;
+  color: #2a2a2a;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p, li {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* || header layout */
+
+header {
+  margin-bottom: 10px;
+}
+
+nav, article, aside, footer {
+  background-color: #FFFFFF;
+  padding: 1%;
+}
+
+nav {
+  height: 50px;
+  background-color: #F3F781;
+  display: flex;
+  border: solid #000000;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+nav form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}
+
+input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+input[type="search"] {
+  flex: 3;
+} 
+
+input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #333;
+  border: 0;
+  color: white; 
+} 
+
+/* || main layout */
+
+main {
+  border: thin solid;
+  display: flex;
+}
+
+article {
+  border: thin solid;
+  flex: 4;
+}
+
+aside {
+  flex: 2;
+  border: thin solid;
+  margin-left: 10px;
+  background-color: #FFFFFF;
+}
+
+aside li {
+  padding-bottom: 10px;
+}
+
+footer {
+  margin-top: 10px;
+}
+>>>>>>> a784ca2f5f897a81f4b4db13769e5b593e944234

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load staticfiles %}
 <head>
@@ -14,4 +15,22 @@
 <li>{{ device }}</li>
 {% endfor %}
 </ul>
+=======
+<!DOCTYPE html>
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+
+    <title>Polytons</title>
+    <link rel='stylesheet' type="text/css"  href="{% static 'css/style.css' %}" />
+
+</head>
+<h1>TESTING</h1>
+<h1>{{ devices.site_id.site_name }}</h1>
+<ul>
+{% for device in devices %}
+<li>{{ device }}</li>
+{% endfor %}
+</ul>
+>>>>>>> a784ca2f5f897a81f4b4db13769e5b593e944234
 <p><a href="{% url 'site_view'%}">Back</a></p>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load staticfiles %}
 <head>
@@ -27,3 +28,34 @@
     <li><a href="{% url 'home' %}">Home</a></li>
     <li><a href="{{request.META.HTTP_REFERER}}">Go back</a></li>
 </ul>
+=======
+<!DOCTYPE html>
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+
+    <title>Polytons</title>
+    <link rel='stylesheet' type="text/css"  href="{% static 'css/style.css' %}" />
+
+</head>
+<table width="100%" border="solid">
+    <tr>
+        <th>Sites</th>
+        <th>Site Group</th>
+    </tr>
+    <tr>
+        {% for site in sites %}
+        <td><a href="view/{{ site.site_name }}">{{ site.site_name }}</a></td>
+        {% endfor %}
+    </tr>
+</table>
+<ol>
+
+</ol>
+
+
+<ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{{request.META.HTTP_REFERER}}">Go back</a></li>
+</ul>
+>>>>>>> a784ca2f5f897a81f4b4db13769e5b593e944234
