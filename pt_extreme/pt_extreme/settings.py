@@ -31,9 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'minions.apps.MinionsConfig',
     'common.apps.CommonConfig',
     'uploader.apps.UploaderConfig',
-    'send_command.apps.SendCommandConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
