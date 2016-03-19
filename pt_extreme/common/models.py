@@ -1,16 +1,14 @@
 from __future__ import unicode_literals
-
+import django
 from django.db import models
-from django.utils.timezone import now
 from uploader.models import Document
 from datetime import datetime
 import os
 
 
 class RecentActions(models.Model):
-    cur_time = now()
     entry = models.CharField(max_length=200, blank=True, null=True)
-    input_time = models.DateTimeField(default=cur_time)
+    input_time = models.DateTimeField(default=django.utils.timezone.now)
 
 
 class Credentials(models.Model):
@@ -23,13 +21,13 @@ class Credentials(models.Model):
         return u'%s' % self.username
 
 
+def upload_path(filename):
+    return os.sep.join(['template', Site.site_group, Site.site_name, str(datetime.now()) + '_' + filename])
+
+
 class Site(models.Model):
-    site_name = models.CharField(primary_key=True, max_length=50)
+    site_name = models.CharField(max_length=50)
     site_group = models.CharField(max_length=50, default="NO GROUP")
-
-    def upload_path(self, filename):
-        return os.sep.join(['template', self.site_group, self.site_name, filename + str(datetime.now())])
-
     site_credentials = models.ForeignKey(Credentials, blank=True, null=True)
     site_template = models.FileField(upload_to=upload_path, blank=True, null=True)
 
